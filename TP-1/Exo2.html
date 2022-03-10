@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <p id="firstChild">toto</p>
+    <p id="secondChild">tata</p>
+    <p id="thirdChild">tutu</p>
+    
+</body>
+<script type="text/javascript">        
+    const bold = document.getElementById('firstChild');
+    console.log(bold);
+    bold.style.fontWeight = 'bold';
+
+    const italic = document.getElementById('secondChild');
+    italic.style.fontStyle = 'italic';
+
+    const upperCase = document.getElementById('thirdChild');
+    upperCase.style = "text-transform: UpperCase";
+</script>
+</html>
