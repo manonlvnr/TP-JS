@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+    <body>
+        <img src="https://www.mimanerashop.com/images/nike-air-force-comics-personalizzate-uomo-disegno-.1200x1200.9112.jpg" id="pivoted" onclick="rotate()">
+    </body>
+    <script type="text/javascript">
+        let rotation = 0;
+
+        function rotate() {
+            rotation += 90;
+            if (rotation===360) {
+                rotation = 0;
+            }
+            document.getElementById('pivoted').style.transform = `rotate(${rotation}deg)`;
+        }
+    </script>
+</html>
