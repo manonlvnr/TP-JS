@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <img src="https://cdn.pixabay.com/photo/2019/11/27/16/47/jordan-4657349_1280.jpg"/>
+    <img src="https://cdn.pixabay.com/photo/2019/01/26/22/48/nike-3957127_1280.jpg"/>
+    <img src="https://cdn.pixabay.com/photo/2020/04/27/11/54/nike-5099507_1280.jpg"/>
+
+    <script type="text/javascript">
+    let sourceRef = document.getElementsByTagName("img").item(2).src;
+    
+    document.getElementsByTagName("img").item(0).src = sourceRef;
+    document.getElementsByTagName("img").item(1).src = sourceRef;
+    </script>
+</body>
+</html>
