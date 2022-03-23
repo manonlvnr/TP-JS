@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+    <body>
+        <div id="square" style="width:50px;height:50px;background-color:rgb(219, 157, 168);position:absolute;"></div>
+        <script type="text/javascript">
+            
+        const square = document.getElementById('square');
+
+        document.onkeydown = detectKey;
+        
+        function detectKey(event) {
+        let posLeft = document.getElementById("square").offsetLeft;
+        let posTop = document.getElementById("square").offsetTop;
+        event = event || window.event;
+        if (event.key === 'ArrowUp') {
+            document.getElementById("square").style.top  = (posTop-50)+"px";
+        }
+        else if (event.key === 'ArrowDown') {
+            document.getElementById("square").style.top  = (posTop+50)+"px";
+        }
+        else if (event.key === 'ArrowLeft') {
+            document.getElementById("square").style.left  = (posLeft-50)+"px";
+        }
+        else if (event.key === 'ArrowRight') {
+            document.getElementById("square").style.left  = (posLeft+50)+"px";
+        }
+    }
+    </script>
+    </body>
