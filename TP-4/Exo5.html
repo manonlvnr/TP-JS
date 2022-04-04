@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <p>Je ne suis pas un palindrome</p>
+    
+    <p>kayak</p>
+
+    <script type="text/javascript">
+        function palindrome(string) {
+            let left = 0;
+            let right = string.length - 1;
+
+            while (left <= right) {
+                if (string[left] !== string[right]) return false;
+                left++;
+                right--;
+            }
+
+            return true;
+        }
+
+        console.log(palindrome("Je ne suis pas un palindrome"), " la première phrase n'est pas un palindrome </br>");
+        console.log(palindrome("kayak"), " la deuxième phrase est un palindrome");
+        
+    </script>
+</body>
+</html>
