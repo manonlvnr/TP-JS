@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div class="square" onclick="changeColor(this)" style="width: 50px;height: 50px; margin: 5px; background-color: black;"></div>
+    <div class="square" onclick="changeColor(this)" style="width: 50px;height: 50px; margin: 5px; background-color: black;"></div>
+    <div class="square" onclick="changeColor(this)" style="width: 50px;height: 50px; margin: 5px; background-color: black;"></div>
+    
+    <script type="text/javascript">
+        
+        function changeColor(click) {
+            let color = click.style.backgroundColor;
+            if ( color === 'black') {
+                click.style.backgroundColor = 'red';
+            } else if(color != 'black') {
+                click.style.backgroundColor = 'black';
+            }
+        }
+    </script>
+</body>
+</html>

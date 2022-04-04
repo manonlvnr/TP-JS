@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+    <script type="text/javascript">
+    
+
+    function randomNumber(min, max){
+        return Math.floor(Math.random() * (max - min) + min)
+    }
+    
+    const divNumber = randomNumber(5, 15);
+
+    for (let i = 5; i < divNumber; i++) {
+        const randomDiv = document.createElement("div");
+        // console.log(randomDiv);
+        randomDiv.style.height = '50px';
+        randomDiv.style.width = '100%';
+
+        const randomColor = "#" + ((1<<24)*Math.random() | 0).toString(16)
+        randomDiv.style.backgroundColor = randomColor;
+        document.querySelector("body").appendChild(randomDiv);
+    }
+    
+    </script>
+</body>
+</html>
