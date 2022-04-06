@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+<ul id="keybordList">
+
+</ul>
+    <script type="text/javascript">
+        document.onkeypress = function(press){
+            const keyPaste = document.createElement('li');
+            keyPaste.textContent = press.key;
+
+            globalList = document.querySelector('#keybordList');
+            globalList.appendChild(keyPaste);
+
+            listNb = document.querySelectorAll('li');
+            console.log(listNb);
+            if(listNb === 20){
+                globalList.removeChild(select.lastChild);
+            }
+        };
+    </script>
+</body>
+</html>
