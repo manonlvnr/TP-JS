@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script type="text/javascript">
+        function getHashTags(string) {   
+            return string.split(" ").map(i => '#' + i).sort((function(a, b){ return b.length - a.length})).slice(0, 3);;
+        }
+
+        console.log(getHashTags('Quel peut bien etre le mot le plus long.'));
+        console.log(getHashTags('Vivement les vacances pour profiter du soleil.'));
+
+    </script>
+</body>
+</html>
