@@ -11,19 +11,22 @@
 
 </ul>
     <script type="text/javascript">
-        document.onkeypress = function(press){
-            const keyPaste = document.createElement('li');
-            keyPaste.textContent = press.key;
+        const list = []
+        
+            document.onkeypress = function(press){
+                if(list.length < 20){
+                    const keyPaste = document.createElement('li');
+                    keyPaste.textContent = press.key;
+                    globalList = document.querySelector('#keybordList');
+                    const all = globalList.appendChild(keyPaste);
+                    list.push(all);
 
-            globalList = document.querySelector('#keybordList');
-            globalList.appendChild(keyPaste);
-
-            listNb = document.querySelectorAll('li');
-            console.log(listNb);
-            if(listNb === 20){
-                globalList.removeChild(select.lastChild);
+                } else if (list.length >= 20){
+                    list.shift();
+                    let globalList = document.querySelector('#keybordList');
+                    globalList.removeChild(globalList.firstChild);                
+                }
             }
-        };
     </script>
 </body>
 </html>
