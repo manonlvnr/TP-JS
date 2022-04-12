@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script type="text/javascript">
+
+        function calculateInt(a,b) {
+            return new Promise((successCallback, failureCallback) => {
+                if (a > b) {
+                    successCallback(a - b);
+                } else {
+                    failureCallback("la deuxième valeur est plus grande que la première");
+                }
+            })
+        }
+
+        function successCallback(résultat) {
+            console.log(résultat);
+        }
+
+
+        function failureCallback(erreur) {
+            console.error(erreur);
+        }
+
+
+        calculateInt(2,7).then(successCallback, failureCallback);    
+        calculateInt(5,2).then(successCallback, failureCallback); 
+    </script>
+</body>
+</html>

@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script type="text/javascript">
+      
+    //////////////////////////// EXO 1 /////////////////////////////////////////////    
+    
+        const myPromise1 = (string) => {
+            return new Promise((successCallback, failureCallback) => {
+                if (string.length > 20) {
+                    successCallback("True");
+                } else {
+                    failureCallback("False");
+                }
+            })
+        }
+
+        async function calculateString(string) {
+            try { 
+               const promise = await myPromise1(string);
+               console.log("la phrase fait plus de 20 caractères : ", promise);
+            } catch(e) {
+                console.log("la phrase fait plus de 20 caractères : ", e);
+            }
+        }
+
+        calculateString("Cette pharse à plus de 20 caractères");
+
+    //////////////////////////// EXO 2 /////////////////////////////////////////////    
+    
+        const myPromise2 = (a,b) => {
+            return new Promise((successCallback, failureCallback) => {
+                if (a > b) {
+                    successCallback(a - b);
+                } else {
+                    failureCallback("la deuxième valeur est plus grande que la première");
+                }
+            })
+        }
+        
+        async function calculateInt(a,b) {
+            try { 
+               const promise = await myPromise2(a,b);
+               console.log(promise);
+            } catch(e) {
+                console.log(e);
+            }
+        }
+
+        calculateInt(5,2);  
+ 
+    </script>
+</body>
+</html>

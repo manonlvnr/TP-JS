@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script type="text/javascript">
+        const string1 = "Cette pharse à plus de 20 caractères";
+        const string2 = "Celle là non";
+
+
+        function calculateString(myString) {
+            return new Promise((successCallback, failureCallback) => {
+                if (myString.length > 20) {
+                    successCallback("True");
+                } else {
+                    failureCallback("False");
+                }
+            })
+        }
+
+        function successCallback(résultat) {
+            console.log("la phrase fait plus de 20 caractères : " , résultat);
+        }
+
+
+        function failureCallback(erreur) {
+            console.error("la phrase fait plus de 20 caractères : " , erreur);
+        }
+
+
+        calculateString(string1).then(successCallback, failureCallback);    
+        calculateString(string2).then(successCallback, failureCallback);    
+        </script>
+</body>
+</html>
