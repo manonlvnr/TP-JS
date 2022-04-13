@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script type="text/javascript">
+
+    function calculateAge(birthDateString) {
+        let from = birthDateString.split("/");
+        let birthdateTimeStamp = new Date(from[2], from[1] - 1, from[0]);
+        let currentDay = new Date();
+        let diff = currentDay - birthdateTimeStamp;
+        let currentAge = Math.floor(diff/31557600000);
+    
+        return new Promise((successCallback, failureCallback) => {
+            if (currentAge >= 18) {
+                successCallback("True");
+            } else {
+                failureCallback("False");
+            }
+        })
+    }
+    
+
+        function successCallback(résultat) {
+            console.log("La personne est majeur : " , résultat);
+        }
+
+
+        function failureCallback(erreur) {
+            console.error("La personne est majeur : " , erreur);
+        }
+
+
+        calculateAge('20/10/1994').then(successCallback, failureCallback);    
+        calculateAge('20/10/2010').then(successCallback, failureCallback); 
+    </script>
+</body>
+</html>

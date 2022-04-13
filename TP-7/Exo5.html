@@ -8,7 +8,7 @@
 </head>
 <body>
     <script type="text/javascript">
-      
+    
     //////////////////////////// EXO 1 /////////////////////////////////////////////    
     
         const myPromise1 = (string) => {
@@ -23,8 +23,8 @@
 
         async function calculateString(string) {
             try { 
-               const promise = await myPromise1(string);
-               console.log("la phrase fait plus de 20 caractères : ", promise);
+                const promise = await myPromise1(string);
+                console.log("la phrase fait plus de 20 caractères : ", promise);
             } catch(e) {
                 console.log("la phrase fait plus de 20 caractères : ", e);
             }
@@ -46,15 +46,43 @@
         
         async function calculateInt(a,b) {
             try { 
-               const promise = await myPromise2(a,b);
-               console.log(promise);
+                const promise = await myPromise2(a,b);
+                console.log(promise);
             } catch(e) {
                 console.log(e);
             }
         }
 
         calculateInt(5,2);  
- 
+
+    //////////////////////////// EXO 3 /////////////////////////////////////////////    
+        
+        const myPromise3 = (birthDateString) => {
+            let from = birthDateString.split("/");
+            let birthdateTimeStamp = new Date(from[2], from[1] - 1, from[0]);
+            let currentDay = new Date();
+            let diff = currentDay - birthdateTimeStamp;
+            let currentAge = Math.floor(diff/31557600000);
+
+            return new Promise((successCallback, failureCallback) => {
+                if (currentAge >= 18) {
+                    successCallback("La personne est majeur : True");
+                } else {
+                    failureCallback("La personne est majeur : False");
+                }
+            })
+        }
+
+        async function calculateAge(birthDateString) {
+            try { 
+                const promise = await myPromise3(birthDateString);
+                console.log(promise);
+            } catch(e) {
+                console.log(e);
+            }
+        }
+
+        calculateAge('20/10/1994');
     </script>
 </body>
 </html>
