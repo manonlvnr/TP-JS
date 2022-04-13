@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script type="text/javascript">
+ //////////////////////////// EXO 1 /////////////////////////////////////////////    
+    
+        const calculateString = (string) => {
+            return new Promise((successCallback, failureCallback) => {
+                if (string.length > 20) {
+                    successCallback("True");
+                } else {
+                    failureCallback("False");
+                }
+            })
+        }
+
+        calculateString("Cette pharse à plus de 20 caractères")
+            .then(function(successCallback) {
+                console.log("la phrase fait plus de 20 caractères :" , successCallback);
+            })
+            .catch(function(failureCallback) {
+                console.log("la phrase fait plus de 20 caractères :" , failureCallback);
+            })
+    
+    //////////////////////////// EXO 2 /////////////////////////////////////////////    
+    
+        const calculateInt = (a,b) => {
+            return new Promise((successCallback, failureCallback) => {
+                if (a > b) {
+                    successCallback(a - b);
+                } else {
+                    failureCallback("la deuxième valeur est plus grande que la première");
+                }
+            })
+        }
+
+        calculateInt(5,2)
+            .then(function(successCallback) {
+                console.log(successCallback);
+            })
+            .catch(function(failureCallback) {
+                console.log(failureCallback);
+            })
+
+    //////////////////////////// EXO 3 /////////////////////////////////////////////    
+        
+        const calculateAge = (birthDateString) => {
+            let from = birthDateString.split("/");
+            let birthdateTimeStamp = new Date(from[2], from[1] - 1, from[0]);
+            let currentDay = new Date();
+            let diff = currentDay - birthdateTimeStamp;
+            let currentAge = Math.floor(diff/31557600000);
+
+            return new Promise((successCallback, failureCallback) => {
+                if (currentAge >= 18) {
+                    successCallback("La personne est majeur : True");
+                } else {
+                    failureCallback("La personne est majeur : False");
+                }
+            })
+        }
+
+        calculateAge('20/10/1994')
+            .then(function(successCallback) {
+                console.log(successCallback);
+            })
+            .catch(function(failureCallback) {
+                console.log(failureCallback);
+            })
+    </script>
+</body>
+</html>
+

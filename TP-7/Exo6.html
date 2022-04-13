@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>People</h1>
+    <ul id="people"></ul>
+
+    <h1>Starships</h1>
+    <ul id="starships"></ul>
+
+    <h1>Planets</h1>
+    <ul id="planets"></ul>
+
+    <script type="text/javascript">
+
+        async function fetchPeoplesJSON() {
+            const response = await fetch('https://swapi.dev/api/people');
+            const peoples = await response.json();
+            return peoples;
+        }
+
+        fetchPeoplesJSON().then(peoples => {
+            console.log(peoples.results);
+            let moviePeoples = (peoples.results);
+            moviePeoples.forEach(moviePeople => {
+                let list = document.getElementById('people');
+                let point = document.createElement('li');
+                list.appendChild(point);
+            });
+        });
+
+        async function fetchStarshipsJSON() {
+            const response = await fetch('https://swapi.dev/api/starships');
+            const starships = await response.json();
+            return starships;
+        }
+
+        fetchStarshipsJSON().then(starships => {
+            console.log(starships.results);
+            let movieStarships = (starships.results);
+            movieStarships.forEach(movieStarship => {
+                let list = document.getElementById('starships');
+                let point = document.createElement('li');
+                list.appendChild(point);
+            });
+        });
+
+        async function fetchPlanetsJSON() {
+            const response = await fetch('https://swapi.dev/api/planets');
+            const planets = await response.json();
+            return planets;
+            }
+
+        fetchPlanetsJSON().then(planets => {
+            console.log(planets.results);
+            let moviePlanets = (planets.results);
+            moviePlanets.forEach(moviePlanet => {
+                let list = document.getElementById('planets');
+                let point = document.createElement('li');
+                list.appendChild(point);
+            });
+        });
+
+    </script>
+</body>
+</html>
